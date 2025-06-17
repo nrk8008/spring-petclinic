@@ -10,12 +10,12 @@ pipeline {
         DOCKER_IMAGE = 'spring-petclinic:latest'
     }
 
-    stages {
-        stage('Checkout') {
+    stage('Checkout') {
             steps {
-                git 'https://github.com/spring-projects/spring-petclinic.git'
+                echo 'Code already checked out by Jenkins.'
             }
-        }
+    }
+
 
         stage('Build') {
             steps {
