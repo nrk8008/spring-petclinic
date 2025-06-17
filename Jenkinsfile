@@ -2,20 +2,20 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven 3' // Configure this in Jenkins > Global Tool Configuration
-        jdk 'JDK 17'    // Same for JDK
+        maven 'Maven 3'   // Must match the name you gave in Jenkins Global Tool Configuration
+        jdk 'JDK 17'      // Must match the name you gave in Jenkins Global Tool Configuration
     }
 
     environment {
         DOCKER_IMAGE = 'spring-petclinic:latest'
     }
 
-    stage('Checkout') {
+    stages {
+        stage('Checkout') {
             steps {
                 echo 'Code already checked out by Jenkins.'
             }
-    }
-
+        }
 
         stage('Build') {
             steps {
